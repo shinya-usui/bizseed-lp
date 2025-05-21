@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizシード説明会 - 日本一ゆるい副業・起業サポートコミュニティ</title>
+    <style>
+        /* リセットとベーススタイル */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #FFFFFF;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* コンテナ */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ヘッダー */
+        header {
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(255, 152, 0, 0.1) 100%);
+            padding: 140px 0 80px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #333;
+            line-height: 1.2;
+        }
+        
+        .main-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #4CAF50;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            color: #FF9800;
+            font-weight: bold;
+            background: linear-gradient(transparent 70%, rgba(255, 152, 0, 0.3) 30%);
+            padding: 0 5px;
+        }
+        
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: #555;
+            font-weight: normal;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+        
+        /* CTA ボタン */
+        .cta-button {
+            display: inline-block;
+            background-color: #FF9800;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: #F57C00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 152, 0, 0.4);
+        }
+        
+        /* セクション共通 */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2rem;
+            color: #4CAF50;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* 悩みセクション */
+        .pains {
+            background-color: #F5F5F5;
+        }
+        
+        .pains-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style-type: none;
+        }
+        
+        .pains-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .pains-list li:before {
+            content: "✓";
+            color: #FF9800;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* ソリューションセクション */
+        .solution {
+            background-color: #FFFFFF;
+        }
+        
+        .solution-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* 費用対効果セクション */
+        .cost-performance {
+            background-color: #F5F5F5;
+        }
+        
+        .cost-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style-type: none;
+        }
+        
+        .cost-list li {
+            margin-bottom: 25px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .cost-list li:before {
+            content: "★";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .cost-list strong {
+            color: #4CAF50;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* ベネフィットセクション */
+        .benefits {
+            background-color: #FFFFFF;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .benefit-card {
+            background-color: #F9F9F9;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        
+        .benefit-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        /* サービス詳細セクション */
+        .service-details {
+            background-color: #F5F5F5;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            border-collapse: collapse;
+        }
+        
+        .schedule-table th,
+        .schedule-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .schedule-table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .features-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style-type: none;
+        }
+        
+        .features-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* 説明会概要 */
+        .seminar-info {
+            background-color: #FFFFFF;
+        }
+        
+        .seminar-details {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #F9F9F9;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .seminar-details h3 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .seminar-details p {
+            margin-bottom: 15px;
+        }
+        
+        .seminar-details ul {
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+        
+        .seminar-details ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .seminar-details ul li:before {
+            content: "•";
+            color: #FF9800;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        /* FAQ セクション */
+        .faq {
+            background-color: #FFFFFF;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 30px;
+        }
+        
+        .faq-question {
+            font-size: 1.2rem;
+            color: #4CAF50;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .faq-answer {
+            color: #555;
+        }
+        
+        /* CTA セクション */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(255, 152, 0, 0.1) 100%);
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-container h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        
+        .cta-features {
+            text-align: left;
+            max-width: 500px;
+            margin: 40px auto;
+            list-style-type: none;
+        }
+        
+        .cta-features li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .cta-features li:before {
+            content: "✓";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .price-tag {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .price-highlight {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        .campaign-note {
+            display: inline-block;
+            background-color: #FF9800;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        .seminar-note {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 20px;
+        }
+        
+        /* フッター */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .benefit-card {
+                padding: 20px;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                padding: 10px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+        }
+        
+        /* タブレット向けスタイル */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">ライフコネクト</div>
+        </div>
+    </header>
+    
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="container">
+            <div class="subtitle">「<span class="highlight">日本一ゆるい</span>」副業・起業サポートコミュニティ</div>
+            <h1 class="main-title">Bizシード説明会</h1>
+            <h2>本業の不安、やりたいことへの迷い、全部解決。<br>Bizシードで無理なく副業・起業を実現</h2>
+            <a href="https://lifeconnect.hp.peraichi.com/Bizseed-setsumeikai" class="cta-button" target="_blank">無料説明会に参加する</a>
+        </div>
+    </section>
+    
+    <!-- 悩みセクション -->
+    <section class="pains" id="pains">
+        <div class="container">
+            <h2 class="section-title">あなたは、こんな悩みを抱えていませんか？</h2>
+            <ul class="pains-list">
+                <li>「本業だけでは将来が不安...でも副業や起業は敷居が高そう」</li>
+                <li>「自分の好きなこと、やりたいことで収入を得たいけど何から始めればいいか分からない」</li>
+                <li>「既存のビジネス塾は覚悟もリスクも大きすぎる...もっとゆるく始められないか」</li>
+                <li>「年金や景気の先行きが不安で、副収入の確保を考えている」</li>
+                <li>「本当の自分らしさを発揮できる仕事や活動を見つけたい」</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- ソリューションセクション -->
+    <section class="solution" id="solution">
+        <div class="container">
+            <h2 class="section-title">副業・起業への第一歩は、「<span class="highlight">日本一ゆるい</span>」Bizシードから</h2>
+            <div class="solution-content">
+                <p>ライフコネクトが提供する「Bizシード」は、副業や起業に興味はあるけれど、大きなリスクを取りたくない方のためのオンラインコミュニティです。</p>
+                <br>
+                <p>4年間の実績を持つ私たちが、「日本一ゆるい」をコンセプトに、あなたの副業・起業の実現をサポート。無理な投資や覚悟を強いることなく、好きなこと、やりたいことで収入を得るための知識とスキルを身につけられます。</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 費用対効果セクション -->
+    <section class="cost-performance" id="cost">
+        <div class="container">
+            <h2 class="section-title">コストパフォーマンスに優れたBizシード</h2>
+            <h3 class="text-center" style="margin-bottom: 40px;">月額たった4,980円で得られる充実の内容</h3>
+            <ul class="cost-list">
+                <li>
+                    <strong>セミナー価値で考えると</strong>
+                    一般的なビジネスセミナー1回3,000円と考えると、月に課題シェア会と勉強会の2回だけでも元が取れます。さらに作業会2回も含めると、圧倒的なコスパを実現。
+                </li>
+                <li>
+                    <strong>挫折リスクの軽減</strong>
+                    高額な起業塾では数十万円を支払い、プレッシャーに耐え切れず挫折してしまうケースも。Bizシードなら月額4,980円と負担が軽く、自分に合わなければいつでも辞められ、必要な時にまた参加できる気軽な環境で学べます。
+                </li>
+                <li>
+                    <strong>気軽な相談・壁打ち機能</strong>
+                    作業会では常駐している担当スタッフに気軽に相談したり、アイデアの壁打ちができます。その場でフィードバックがもらえるので、一人では気づかない視点が得られます。
+                </li>
+                <li>
+                    <strong>入会費無料キャンペーン実施中</strong>
+                    通常10,000円の入会費が、期間限定で無料になるチャンスをお見逃しなく！
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- ベネフィットセクション -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title"><span class="highlight">日本一ゆるい</span> Bizシードへの参加で得られるもの</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3 class="benefit-title">気軽な準備</h3>
+                    <p>大きなリスクや投資なしで、副業・起業の準備が始められます</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">❤️</div>
+                    <h3 class="benefit-title">好きなことで収入</h3>
+                    <p>自分の得意なこと、情熱を持てることで稼ぐ方法を学べます</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌱</div>
+                    <h3 class="benefit-title">ゆるくチャレンジ</h3>
+                    <p>過度なプレッシャーなく、自分のペースで進められます</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h3 class="benefit-title">仲間との共有</h3>
+                    <p>同じ志を持つ仲間と課題や悩みを共有し、一緒に成長できます</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔍</div>
+                    <h3 class="benefit-title">スタッフのサポート</h3>
+                    <p>わからないことがあれば、経験豊富な担当スタッフに相談できます</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h3 class="benefit-title">実践的なスキル</h3>
+                    <p>ビジネスの基本から実践的なノウハウまで、実際に使えるスキルが身につきます</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- サービス詳細セクション -->
+    <section class="service-details" id="details">
+        <div class="container">
+            <h2 class="section-title">Bizシードのサービス内容</h2>
+            <p class="text-center" style="margin-bottom: 40px;">週1回（2時間）、一ヶ月1クールの起業塾をオンラインで開催。参加者同士で課題を共有し、ビジネスについて共に学び、各自で作業を進めることができます。</p>
+            
+            <h3 class="text-center" style="margin-bottom: 30px;">基本スケジュール（月額4,980円で参加できる4回のセッション）</h3>
+            <table class="schedule-table">
+                <tr>
+                    <th>週</th>
+                    <th>内容</th>
+                    <th>詳細</th>
+                </tr>
+                <tr>
+                    <td>1週目</td>
+                    <td>課題シェア会</td>
+                    <td>抱えている課題や悩みについて語り合う</td>
+                </tr>
+                <tr>
+                    <td>2週目</td>
+                    <td>勉強会</td>
+                    <td>ビジネスの基礎や課題解決策を学ぶ</td>
+                </tr>
+                <tr>
+                    <td>3週目</td>
+                    <td>作業会</td>
+                    <td>各自の作業に取り組む時間</td>
+                </tr>
+                <tr>
+                    <td>4週目</td>
+                    <td>作業会</td>
+                    <td>引き続き作業に取り組む時間</td>
+                </tr>
+            </table>
+            
+            <h3 class="text-center" style="margin-bottom: 30px;">作業会の魅力</h3>
+            <ul class="features-list">
+                <li>作業に集中できる時間・場を定期的に確保</li>
+                <li>仲間と一緒に取り組むことでモチベーション維持</li>
+                <li>わからないことがあれば、常駐する担当スタッフに気軽に相談・壁打ちができる</li>
+                <li>課題シェア会、勉強会は限定動画のリンク共有で追っかけ受講や振り返り受講できる</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- 説明会概要 -->
+    <section class="seminar-info" id="seminar">
+        <div class="container">
+            <h2 class="section-title">Bizシード説明会（60分間／月１回）</h2>
+            <div class="seminar-details">
+                <h3>説明会では、オンラインコミュニティ「ライフコネクト」のサービス「Bizシード」について詳しくご案内します。</h3>
+                <p><strong>開催日時:</strong> 毎月第3週の平日夜</p>
+                <p><strong>場所:</strong> オンライン（ZOOM）</p>
+                <p><strong>所要時間:</strong> 60分間</p>
+                
+                <h3 style="margin-top: 30px;">説明会内容:</h3>
+                <ul>
+                    <li>ライフコネクトの概要と歩み</li>
+                    <li>Bizシードのサービス詳細</li>
+                    <li>参加方法と費用</li>
+                    <li>質疑応答</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 主催者紹介 -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title"><span class="highlight">日本一ゆるい</span> ライフコネクトについて</h2>
+            <div class="solution-content">
+                <p style="text-align: center; font-weight: bold; margin-bottom: 30px;">「日本一ゆるい」副業・起業サポートのオンラインコミュニティ</p>
+                
+                <p>「かかりつけ専門家をサポートしたい」×「困っている人を専門家に繋ぎたい」という想いからスタート</p>
+                <p>2020年から丸4年かけて、個人事業主向けのオンライン登壇イベントを計8回開催（ビジネスコンサル付き）</p>
+                <p>現在は限定Facebookページや月刊LCピックアップなどのサービスを提供</p>
+                
+                <h3 style="margin-top: 40px; margin-bottom: 20px;">新生ライフコネクトのサービス</h3>
+                <ul style="list-style-type: none; margin-left: 20px;">
+                    <li>・Bizシード（オンライン起業塾）</li>
+                    <li>・オンラインマルシェ（起業した方が出店いただけます）※希望者のみ別途費用</li>
+                    <li>・オンラインセミナー（ライブ配信イベントに登壇いただけます）※希望者のみ別途費用</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ セクション -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">よくある質問</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q: Bizシードはどんな人に向いていますか？</div>
+                    <div class="faq-answer">
+                        <p>以下のような方におすすめです。</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>副業・起業に興味があって、勉強を始めたい方</li>
+                            <li>好きなこと、やりたいことで稼ぎたい方</li>
+                            <li>敷居が低く、冒険しないオンライン起業塾をお探しの方</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 費用はいくらですか？</div>
+                    <div class="faq-answer">
+                        <p>入会費10,000円（税込）、月会費4,980円（税込）です。現在、期間限定キャンペーンとして、8/25までにお申込みの方は入会費が無料になります。一般的なビジネスセミナー（1回3,000円程度）と比較しても、非常にコストパフォーマンスに優れています。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 他の起業塾と比べて費用面でのメリットは何ですか？</div>
+                    <div class="faq-answer">
+                        <p>一般的な起業塾では数十万円の費用がかかることも多いですが、Bizシードは月額4,980円と負担が軽く、自分のペースで学べます。セミナー2回と作業会2回がセットになっており、それぞれの市場価格で考えるとかなりお得です。また、高額コースではプレッシャーから挫折するケースもありますが、Bizシードなら気軽に始められ、いつでも退会及び受講再開ができるので安心です。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 参加するにはどうすればいいですか？</div>
+                    <div class="faq-answer">
+                        <p>まずは説明会（毎月第3週の平日夜）にご参加ください。その後、毎月25日までにお申込みいただくと、翌月の1週目からコミュニティに参加いただけます。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 作業会での相談はどのようなものですか？</div>
+                    <div class="faq-answer">
+                        <p>作業会では常駐している担当スタッフに気軽に相談したり、アイデアの壁打ちができます。担当スタッフはそれぞれ自身のビジネスを展開している先輩起業家なので、実践的なアドバイスが得られます。本格的なコンサルティングではありませんが、作業中に生じた疑問点や悩みについて経験に基づいたフィードバックを得られるので、一人で作業するよりも効率的に進められます。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 時間がない場合でも参加できますか？</div>
+                    <div class="faq-answer">
+                        <p>はい。各回のZOOMセッションは録画されますので、後からでも視聴可能です。課題シェア会と勉強会は限定動画のリンク共有で追っかけ受講や振り返り受講もできます。「日本一ゆるい」をコンセプトにしておりますので、無理なく続けられる設計になっています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA セクション -->
+    <section class="cta-section" id="cta">
+        <div class="container cta-container">
+            <h2><span class="highlight">日本一ゆるく</span> 副業・起業への一歩を踏み出しませんか？</h2>
+            <p>Bizシードの説明会で、あなたの「やりたいこと」を仕事にする方法を知ることができます。</p>
+            
+            <div class="campaign-note">【期間限定】8/25までのお申込みで入会費10,000円が無料に！</div>
+            
+            <a href="https://lifeconnect.hp.peraichi.com/Bizseed-setsumeikai" class="cta-button" target="_blank">無料説明会に申し込む</a>
+            
+            <div class="price-tag">
+                <span class="price-highlight">月額たった4,980円</span>で、副業・起業の夢を現実に
+            </div>
+            
+            <ul class="cta-features">
+                <li>課題シェア会＋勉強会＋作業会×2回（通常なら総額1万円以上の価値）</li>
+                <li>作業中の疑問点を常駐スタッフに気軽に相談できる</li>
+                <li>高額な起業塾と違い、気軽に始められる安心感</li>
+            </ul>
+            
+            <p class="seminar-note">※説明会は毎月第3週の平日夜に開催、所要時間は60分です</p>
+        </div>
+    </section>
+    
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">お問い合わせ</a>
+                <a href="#">プライバシーポリシー</a>
+                <a href="#">利用規約</a>
+            </div>
+            <div class="copyright">Copyright © 2025 ライフコネクト</div>
+        </div>
+    </footer>
+</body>
+</html>
